@@ -2,7 +2,9 @@
 
 // basic class for visualizing physics and using Vector
 class Dynamic extends Vome {
-  // static tick = 20;
+  static tick = 20;
+
+  static all = []
 
   // the element to add its visual element to
   static plate = document.querySelector("body");
@@ -24,9 +26,10 @@ class Dynamic extends Vome {
   // defines how to look. it takes the node that which to add itself as argument
   visual() {
     let vis = document.createElement("div");
-    vis.style.border = "20px solid hsl(0, 0%, 10%);";
     vis.style.transitionDuration = this.constructor.tick + "ms";
+    vis.style.position= "absolute";
     vis.className = "Dynamic";
+
 
     return vis;
   }
