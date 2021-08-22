@@ -8,8 +8,23 @@
 class Vome {
   // [py] self.__class__ = [js] this.constructor
   constructor() {
-    // first is parent, second is its class
-    if (Object.getPrototypeOf(this.constructor).tick != this.constructor.tick) {
+    if (!this.constructor.hasChild) {
+      this.define();
+    }
+    this.init();
+  }
+
+  init() {
+    this.enable();
+  }
+
+  // the firs instantiated object will determine to new all[] or parents' all
+  static hasChild = false;
+  // after, the determining phase, it wont be called. but it is always chcked in
+  // constructor if it has determined. so, we need a fix here. but works fine.
+  define() {
+    console.log("define");
+    if (this.constructor.tick != Object.getPrototypeOf(this.constructor).tick) {
       // if the tick of this class is different than its parent, it will hold
       // its instances in other array than parents. if they are same, many
       // childs can be stopped from their parent
@@ -17,14 +32,7 @@ class Vome {
       // !!problem!! it makes all empty after every childl instantiated
       this.constructor.all = [];
     }
-
-    // this.all=[]
-
-
-
-    this.constructor.all.push(this);
-
-    this.init(...arguments)
+    this.constructor.hasChild = true;
   }
 
   static tickId = null;
@@ -69,8 +77,8 @@ class Vome {
   // the first time when you start the class, it will be called
   static initialStart() {
     // nothing much. just sits here, we'll use it when it is needed
-    this.normalStart()
-    this.start = this.normalStart
+    this.normalStart();
+    this.start = this.normalStart;
   }
 
   // normally starts stopped class
@@ -82,7 +90,7 @@ class Vome {
 
   // starts the calling of processAll in every tick
   static start() {
-    this.initialStart()
+    this.initialStart();
     // after first call, it is equal to normalStart()
     // initialStart() also calls normalStart()
   }

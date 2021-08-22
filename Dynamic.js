@@ -19,6 +19,8 @@ class Dynamic extends Vome {
     } else {
       this.constructor.plate.appendChild(this.vis);
     }
+
+    this.enable()
   }
 
   // defines how to look. it takes the node that which to add itself as argument
