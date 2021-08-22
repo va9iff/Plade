@@ -1,11 +1,8 @@
-function loadScript(url)
-{    
-    var head = document.getElementsByTagName('head')[0];
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = url;
-    head.appendChild(script);
+// the scripts will be loaded just after this script tag
+function loadScript(src) {
+	document.write(`<script src="${src}"></script>`);
 }
 
-
-// loadScript()
+loadScript('Velegant.js')
+loadScript('Vome.js')
+loadScript('Dynamic.js')
