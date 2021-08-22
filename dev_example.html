@@ -33,8 +33,8 @@ class Flappy extends Dynamic {
   process() {
     this.vel.y += 1.5;
     if (this.pos.y > 500) {
-      this.pos.y = 10;
-      this.vel = new Vector(0, 0);
+      this.pos= V(10,10)
+      this.vel = new Vector(8, 0);
     }
     // this.vel = this.pos
     //   .vectorTo(new Vector(350, 350))
@@ -45,20 +45,14 @@ class Flappy extends Dynamic {
 
 let flappy_bird = new Flappy();
 
-
-new Flappy().pos=V(200,200)
-
-new Flappy().pos=V(200,300)
-
-new Flappy().pos=V(400,200)
 function jump(e){
-	flappy_bird.vel=V(0,-15)
+	flappy_bird.vel=V(5,-15)
 }
 
 document.onclick = jump
 
 // flappy_bird.pos = new Vector(350, 300);
-flappy_bird.vel = V(0, 0.05);
+flappy_bird.vel = V(8, 0.05);
 
 Flappy.start();
 
