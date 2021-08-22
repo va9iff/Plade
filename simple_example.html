@@ -1,11 +1,27 @@
 <script src="https://va9iff.github.io/Plade/import.js"></script>
 
-<body>
+<script>
+	let pi = Math.PI;
 
+	class Flappy extends Dynamic {
+	  process() {
+	    this.vel.y += 2;
+	    if (this.pos.y > 500) {
+	      this.pos.y = 10;
+	      this.vel = new Vector(0, 0);
+	    }
+	  }
+	}
 
-	<script>
+	let flappy_bird = new Flappy();
 
-		console.log(Vector)
-	</script>
+	flappy_bird.pos = new Vector(350, 300);
+	flappy_bird.vel = V(0, 0.05);
+
+	Flappy.start();
+
+	// note: nothing to commit. just deleted old app.js and playing with Dynamic.
+
+</script>
 </body>
 </html>
