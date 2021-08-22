@@ -3,6 +3,6 @@ function loadScript(src) {
 	document.write(`<script src="${src}"></script>`);
 }
 
-loadScript('https://va9iff.github.io/Plade/Velegant.js')
-loadScript('https://va9iff.github.io/Plade/Vome.js')
-loadScript('https://va9iff.github.io/Plade/Dynamic.js')
+loadScript('https://raw.githubusercontent.com/va9iff/Plade/main/Velegant.js')
+loadScript('https://raw.githubusercontent.com/va9iff/Plade/main/Vome.js')
+loadScript('https://raw.githubusercontent.com/va9iff/Plade/main/Dynamic.js')
