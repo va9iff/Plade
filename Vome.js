@@ -8,14 +8,29 @@
 class Vome {
   // [py] self.__class__ = [js] this.constructor
   constructor() {
+    // first is parent, second is its class
+    if (Object.getPrototypeOf(this.constructor).tick != this.constructor.tick) {
+      // if the tick of this class is different than its parent, it will hold
+      // its instances in other array than parents. if they are same, many
+      // childs can be stopped from their parent
+
+      // !!problem!! it makes all empty after every childl instantiated
+      this.constructor.all = [];
+    }
+
+    // this.all=[]
+
+
+
     this.constructor.all.push(this);
+
+    this.init(...arguments)
   }
 
   static tickId = null;
 
   // the array that will hold all the instances (enabled instances)
-  // classes can have saperate, or 1 in parent for more child class (it is
-  // needed to have saperate if the class uses different tick)
+  // different ticked child classes has own "all". (see .start())
   static all = [];
 
   // time interval for every tick in ms.
@@ -51,13 +66,25 @@ class Vome {
     });
   }
 
-  // starts the calling of processAll in every tick
-  static start() {
-    // "this" is the class here
-    // console.log(this, "got started");
+  // the first time when you start the class, it will be called
+  static initialStart() {
+    // nothing much. just sits here, we'll use it when it is needed
+    this.normalStart()
+    this.start = this.normalStart
+  }
+
+  // normally starts stopped class
+  static normalStart() {
     this.tickId = setInterval(() => {
       this.processAll();
     }, this.tick);
+  }
+
+  // starts the calling of processAll in every tick
+  static start() {
+    this.initialStart()
+    // after first call, it is equal to normalStart()
+    // initialStart() also calls normalStart()
   }
 
   // stops the calling of processAll in every tick

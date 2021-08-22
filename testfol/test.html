@@ -29,16 +29,22 @@ class Flappy extends Dynamic {
     this.vel.y += 2;
     if (this.pos.y > 500) {
     	// alert('you died')
-      this.pos.y = 10;
+      this.pos.y -= 500;
       this.vel = new Vector(0, 0);
     }
   }
 }
 
-let flappy_bird = new Flappy();
+new Flappy();
+
+new Flappy().pos=(V(400,200))
+new Flappy().pos=(V(200,250))
+new Flappy().pos=(V(0,50))
+new Flappy().pos=(V(0,10))
+new Flappy().pos=(V(600,500))
 
 function jump(e){
-	flappy_bird.vel=V(0,-15)
+	Flappy.all.forEach(flappy_bird=>flappy_bird.vel=V(0,-15))
 }
 
 document.onclick = jump

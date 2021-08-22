@@ -4,14 +4,12 @@
 class Dynamic extends Vome {
   static tick = 20;
 
-  static all = []
+  // static all = []
 
   // the element to add its visual element to
   static plate = document.querySelector("body");
 
-  constructor(plate) {
-    super();
-
+  init(plate) {
     this.pos = V();
     this.vel = V();
     this.vis = this.visual();
