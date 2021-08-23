@@ -11,12 +11,8 @@
 	.Dynamic{
 		width: 80px;
 		height: 50px;
-		/*background-color: red;*/
 		background: linear-gradient(20deg, magenta, cyan);
 		border-radius: 4rem;
-		/*background-image: url("https://freepikpsd.com/media/2019/11/flappy-bird-png-1-Transparent-Images.png");*/
-		 /*background-image: url("https://freepikpsd.com/media/2019/11/flappy-bird-png-1-Transparent-Images.png");*/
-
 		left: 0;
 		top: 0;
 		background-size: cover;
@@ -24,14 +20,11 @@
 	}
 </style>
 
-<script src="devImport.js"></script>
+<script src="https://va9iff.github.io/Plade/import.js"></script>
 <!-- imports Plade -->
 
 <script>
-let pi = Math.PI;
-
 class Flappy extends Dynamic {
-  // static all = [];
   static tick = 40;
   process() {
     this.vel.y += 1.5;
@@ -39,10 +32,6 @@ class Flappy extends Dynamic {
       this.pos= V(10,10)
       this.vel = new Vector(8, 0);
     }
-    // this.vel = this.pos
-    //   .vectorTo(new Vector(350, 350))
-    //   .rotate(pi / 2)
-    //   .setLen(10);
   }
 }
 
@@ -54,7 +43,6 @@ function jump(e){
 
 document.onclick = jump
 
-// flappy_bird.pos = new Vector(350, 300);
 flappy_bird.vel = V(8, 0.05);
 
 Flappy.start();
