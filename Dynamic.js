@@ -37,8 +37,12 @@ class Dynamic extends Vome {
   // just add its velocity to position. the most basic physics simulation
   processDynamic() {
     this.pos = this.pos["+"](this.vel);
-    this.vis.style.transform = "rotate("+(this.vel.angle())+"rad)"
+    // this.lookAt(this.vel)
     this.posfix();
+  }
+
+  lookAt(vec){
+    this.vis.style.transform = "rotate("+(vec.angle())+"rad)"
   }
 
   // Dynamic's special and normal process
