@@ -7,17 +7,17 @@ class Dynamic extends Vome {
   // static all = []
 
   // the element to add its visual element to
-  static plate = document.querySelector("body");
+  static node = document.querySelector("body");
 
-  init(plate) {
+  init(node) {
     this.pos = V();
     this.vel = V();
     this.vis = this.visual();
 
-    if (plate) {
-      plate.appendChild(this.vis);
+    if (node) {
+      node.appendChild(this.vis);
     } else {
-      this.constructor.plate.appendChild(this.vis);
+      this.constructor.node.appendChild(this.vis);
     }
 
     this.enable()
