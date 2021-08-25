@@ -34,6 +34,10 @@ class Dynamic extends Vome {
     return vis;
   }
 
+  remove(){
+    this.vis.remove()
+  }
+
   // just add its velocity to position. the most basic physics simulation
   processDynamic() {
     this.pos = this.pos["+"](this.vel);
