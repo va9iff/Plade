@@ -169,7 +169,7 @@ class Vector {
 
   //r: a Vector that looks from V to vec
   vectorTo(vec) {
-    return vec.sub(this);
+    return vec.re().sub(this);
   }
 
   //r: distance from V to vec
