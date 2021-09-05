@@ -1,7 +1,7 @@
-// import { Vome } from "./Vome.js";
+// import { Ticker } from "./Ticker.js";
 
 // basic class for visualizing physics and using Vector
-class Dynamic extends Vome {
+class Dynamic extends Ticker {
   static tick = 20;
 
   // static all = []

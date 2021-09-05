@@ -3,6 +3,6 @@ function loadScript(src) {
 	document.write(`<script src="${src}"></script>`);
 }
 
-loadScript('Vome.js')
+loadScript('Ticker.js')
 loadScript('Velegant.js')
 loadScript('Dynamic.js')

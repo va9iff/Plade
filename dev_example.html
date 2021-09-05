@@ -49,7 +49,10 @@ class Flappy extends Dynamic {
 let flappy_bird = new Flappy();
 
 function jump(e){
+	flappy_bird.posfix()
 	flappy_bird.vel=V(5,-15)
+	flappy_bird.process()
+	flappy_bird.posfix()
 }
 
 document.onclick = jump

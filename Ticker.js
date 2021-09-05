@@ -1,11 +1,11 @@
-// Vome's instances will have custom loop and process callbacks.
+// Ticker's instances will have custom loop and process callbacks.
 
-// Vome class doesn't have any visuals, physics, or specifics.
+// Ticker class doesn't have any visuals, physics, or specifics.
 // it is the base class for having some relation in between its objects,
 // such as calling their process function every tick. checking other instances
 // of different version of this class in specific way.
 // it is very useful for gamedev tho. so it has game specific sublclasses too.
-class Vome {
+class Ticker {
   // [py] self.__class__ = [js] this.constructor
   constructor() {
     if (!this.constructor.hasChild) {
@@ -102,4 +102,4 @@ class Vome {
   }
 }
 
-// export { Vome };
+// export { Ticker };
